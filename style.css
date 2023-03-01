@@ -1,0 +1,339 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: hsl(268, 93%, 6%);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.background-image {
+    background-image: url("./assets/bg-desktop-dark.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 240px;
+    z-index: -1;
+  }
+
+.background-image img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0px 30px;
+    margin-top: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-button{
+    text-align: center;
+}
+.login-btn {
+    margin:10px 10px;
+    height: 50px;
+    width:80px;
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+.title {
+    color: white;
+    letter-spacing: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.login-but{
+    transition: all .25s ease;
+    background-color: hsl(285, 81%, 34%);
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+     display: inline-block;
+       padding: 10px 10px;
+      border-radius: 10px; 
+      transition-property: box-shadow, transform, border-color; 
+}
+.login-but:hover {
+    box-shadow: 0px 0px 10px hsl(0, 0%, 100%);
+    transform: translate3d(-5px);
+  }
+.new-todo {
+    width: 100%;
+    height: 70px;
+    background-color: hsl(235, 24%, 19%);
+    margin-top: 50px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.check{
+    flex-basis: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid hsl(237, 14%, 26%);
+    transition: all 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-important{
+    margin-left: 10px;
+    width:20px;
+    height:20px;
+}
+.check-mark img {
+    visibility: hidden;
+}
+
+.check-mark.checked img, .check-mark:hover img {
+    visibility: visible;
+}
+
+.check-mark:hover {
+    border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+}
+
+.check-mark.checked {
+    background-color: pink;
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+}
+
+.todo-text.checked {
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+.check-important{
+    margin-left: -25px;
+    margin-right: -25px;
+    width:20px;
+    height:20px;
+}
+.new-todo-input {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.new-todo-input input {
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: hsl(234, 39%, 85%);
+}
+
+.new-todo-input form {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.new-todo-input button {
+    display: none;
+  }
+  .new-todo-input #due-date {
+    margin-right: 10px;
+  }
+.new-todo-input input::placeholder {
+    color: hsl(233, 14%, 35%);
+}
+.timestamp-text{color:#ddd;}
+.todo-text {
+    flex: 1;
+    margin-left:20px;
+    font-size: 18px;
+    color: hsl(234, 39%, 85%);
+}
+#due-date {
+    position: relative;
+    margin-left: 300px; /* Add this to add margin to the right */
+}
+.todo-item {
+    width: 100%;
+    height: 70px;
+    background-color: hsl(235, 24%, 19%);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid hsl(237, 14%, 26%);
+    cursor: pointer;
+    transition: all .25s ease;
+    position: relative;
+    transition-property: box-shadow, transform, border-color;
+}
+
+.todo-items-wrapper {
+    margin-top: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: hsl(235, 24%, 19%);
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+}
+
+.todo-items-info {
+    width: 100%;
+    height: 70px;
+    background-color: hsl(235, 24%, 19%);
+    display: flex;
+    align-items: center;
+    color: hsl(233, 14%, 35%);
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+.edit-button{
+    font-weight: 500;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* position: relative; */
+    cursor: pointer;
+    transition-property: box-shadow, transform, border-color;
+    border:none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.edit-button img{
+    width: 100%;
+    height:100%;
+}
+
+.delete-button{
+    
+    margin-left: auto;
+    margin-right: 30px;
+    position: relative;
+    cursor: pointer;
+    transition-property: box-shadow, transform, border-color;
+    border:none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.delete-button img{
+    width: 100%;
+    height:100%;
+}
+.edit-button:hover {
+    box-shadow: 0px 0px 10px hsl(0, 0%, 90%);
+    transform: translate3d(-10px);
+  }
+  .delete-button:hover {
+    box-shadow: 0px 0px 10px hsl(0, 0%, 100%);
+    transform: translate3d(-5px);
+  }
+.todo-text-container {
+    flex:1;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+}
+
+.items-statuses {
+    display: flex;
+    justify-content: center;
+}
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {box-shadow: 0px 0px 10px hsl(0, 0%, 100%);}
+.items-statuses span  {
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.items-clear {
+    cursor: pointer;
+    text-align: end;
+}
+
+.items-statuses span:hover, .items-clear:hover {
+    color: hsl(220, 98%, 61%);
+}
+
+.items-statuses .active  {
+    color: hsl(220, 98%, 61%);
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    border-color: hsl(235, 24%, 19%);
+}
+
+.dropbtn {
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 10px;
+    background-color:  hsl(285, 81%, 34%);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    box-shadow: 0px 0px 10px hsl(271, 96%, 9%);
+    transform: translate3d(-5px);
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(285, 81%, 34%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    bottom: calc(100% + 5px);
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: hsl(285, 93%, 16%);}
+  
+ .show {display:block;}
+
+  .timestamp-container {
+    margin-left: 16px;
+}
