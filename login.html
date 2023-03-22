@@ -1,107 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css" />
-  <title>Document</title>
-  
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
-  
-  <script src="/__/firebase/8.10.1/firebase-app.js"></script>
-  <script src="/__/firebase/8.10.1/firebase-auth.js"></script>
-  <script src="/__/firebase/8.10.1/firebase-firestore.js"></script>
-
-<div class="container">
-  <div class="screen">
-    <div class="screen__content">
-      <form class="login">
-        <div class="login__field">
-          <i class="login__icon fas fa-user"></i>
-          <input
-            type="text"
-            class="login__input"
-            placeholder="User name / Email"
-          />
-        </div>
-        <div class="login__field">
-          <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Password" />
-        </div>
-        <button type="submit" class="button login__submit">
-          <span class="button__text">Log In Now</span>
-          <i class="button__icon fas fa-chevron-right"></i>
-        </button>
-      </form>
-
-      <script type="module">
-        const firebaseConfig = {
-            apiKey: "AIzaSyBWfRZi-3aiMEiHfkDatzNMpndn7ZOmeFE",
-            authDomain: "todo-shivam.firebaseapp.com",
-            databaseURL:
-              "https://todo-shivam-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "todo-shivam",
-            storageBucket: "todo-shivam.appspot.com",
-            messagingSenderId: "762831452544",
-            appId: "1:762831452544:web:4fada42e2b6a00d12fe965",
-            measurementId: "G-F644LEWQ22",
-          };
-
-          const app = initializeApp(firebaseConfig);
-          const db = getFirestore(app);
-          const auth = getAuth();
-
-          document.querySelector(".login").addEventListener("submit", (event) => {
-          event.preventDefault();
-          let email = document.querySelector(
-            ".login__input[type='text']"
-          ).value;
-          let password = document.querySelector(
-            ".login__input[type='password']"
-          ).value;
-
-          
-          function authorizeAndDisplayItems(email, password) {
-            signInWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                // User is authorized, get items from Firebase Firestore
-                db.collection("todo-items").onSnapshot((snapshot) => {
-                  let items = [];
-                  snapshot.docs.forEach((doc) => {
-                    items.push({
-                      id: doc.id,
-                      ...doc.data(),
-                    });
-                  });
-                  generateItems(items);
-                });
-              })
-              .catch((error) => {
-                // Handle authorization errors
-                console.error("Error authorizing user: ", error);
-              });
-          }
-        });
-      </script>
-      <div class="social-login">
-        <h3>log in via</h3>
-        <div class="social-icons">
-          <a href="#" class="social-login__icon fab fa-instagram"></a>
-          <a href="#" class="social-login__icon fab fa-facebook"></a>
-          <a href="#" class="social-login__icon fab fa-twitter"></a>
-        </div>
-      </div>
+  <div class="login-container">
+    <div id="main">
+      <h1>Sign In</h1>
+      <input id="email" type="text" placeholder="Email"></input>
+      <input id="password" type="password" placeholder="Password"></input>
+      <button id="submit">Submit</button>
+      <p><span>or</span></p>
+      <button id="sign-up">Sign Up</button>
     </div>
-    <div class="screen__background">
-      <span class="screen__background__shape screen__background__shape4"></span>
-      <span class="screen__background__shape screen__background__shape3"></span>
-      <span class="screen__background__shape screen__background__shape2"></span>
-      <span class="screen__background__shape screen__background__shape1"></span>
+
+    <div id="create-acct">
+      <h1>Create an Account</h1>
+      <input id="email-signup" type="text" placeholder="Email *"></input>
+      <input id="confirm-email-signup" type="email" placeholder="Confirm Email *"></input>
+      <input id="password-signup" type="password" placeholder="Password *"></input>
+      <input id="confirm-password-signup" type="password" placeholder="Confirm Password *"></input>
+      <button id="create-acct-btn">Create Account</button>
+      <button id="return-btn">Return to Login</button>
     </div>
   </div>
-</div>
-
+  <script type="module" src="script2.js"></script>
 </body>
+
 </html>
