@@ -20,11 +20,11 @@ body {
     right: 0;
     height: 240px;
     z-index: -1;
-  }
+}
 
 .background-image img {
     width: 100%;
-    height:100%;
+    height: 100%;
     object-fit: cover;
     object-position: left;
 }
@@ -41,38 +41,49 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.login-button{
+
+.imp {
+    text-transform: uppercase;
+
+}
+
+.login-button {
     text-align: center;
 }
+
 .login-btn {
-    margin:10px 10px;
+    margin: 10px 10px;
     height: 50px;
-    width:80px;
+    width: 80px;
     color: white;
     font-size: larger;
     text-decoration: none;
 }
+
 .title {
     color: white;
     letter-spacing: 10px;
     font-size: 50px;
     font-weight: bold;
 }
-.login-but{
+
+.login-but {
     transition: all .25s ease;
     background-color: hsl(285, 81%, 34%);
     color: #ffffff;
     position: relative;
     text-decoration: none;
-     display: inline-block;
-       padding: 10px 10px;
-      border-radius: 10px; 
-      transition-property: box-shadow, transform, border-color; 
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition-property: box-shadow, transform, border-color;
 }
+
 .login-but:hover {
     box-shadow: 0px 0px 10px hsl(0, 0%, 100%);
     transform: translate3d(-5px);
-  }
+}
+
 .new-todo {
     width: 100%;
     height: 70px;
@@ -83,7 +94,7 @@ body {
     align-items: center;
 }
 
-.check{
+.check {
     flex-basis: 90px;
     display: flex;
     justify-content: center;
@@ -100,39 +111,44 @@ body {
     justify-content: center;
     align-items: center;
 }
-.check-important{
+
+.check-important {
     margin-left: 10px;
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
 }
+
 .check-mark img {
     visibility: hidden;
 }
 
-.check-mark.checked img, .check-mark:hover img {
+.check-mark.checked img,
+.check-mark:hover img {
     visibility: visible;
 }
 
 .check-mark:hover {
     border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
 }
 
 .check-mark.checked {
     background-color: pink;
-    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
 }
 
 .todo-text.checked {
     text-decoration: line-through;
     color: hsl(233, 14%, 35%);
 }
-.check-important{
+
+.check-important {
     margin-left: -25px;
     margin-right: -25px;
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
 }
+
 .new-todo-input {
     flex-grow: 1;
     display: flex;
@@ -154,26 +170,36 @@ body {
     display: flex;
     align-items: center;
 }
+
 .new-todo-input button {
     display: none;
-  }
-  .new-todo-input #due-date {
+}
+
+.new-todo-input #due-date {
     margin-right: 10px;
-  }
+}
+
 .new-todo-input input::placeholder {
     color: hsl(233, 14%, 35%);
 }
-.timestamp-text{color:#ddd;}
+
+.timestamp-text {
+    color: #ddd;
+}
+
 .todo-text {
     flex: 1;
-    margin-left:20px;
+    margin-left: 20px;
     font-size: 18px;
     color: hsl(234, 39%, 85%);
 }
+
 #due-date {
     position: relative;
-    margin-left: 300px; /* Add this to add margin to the right */
+    margin-left: 300px;
+    /* Add this to add margin to the right */
 }
+
 .todo-item {
     width: 100%;
     height: 70px;
@@ -192,7 +218,7 @@ body {
     border-radius: 6px;
     overflow: hidden;
     background-color: hsl(235, 24%, 19%);
-    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.4);
     margin-bottom: 30px;
 }
 
@@ -208,7 +234,8 @@ body {
     justify-content: space-between;
     padding-right: 30px;
 }
-.edit-button{
+
+.edit-button {
     font-weight: 500;
     color: white;
     margin-left: 20px;
@@ -216,42 +243,47 @@ body {
     /* position: relative; */
     cursor: pointer;
     transition-property: box-shadow, transform, border-color;
-    border:none;
+    border: none;
     height: 30px;
     width: 30px;
     border-radius: 50%;
 }
-.edit-button img{
+
+.edit-button img {
     width: 100%;
-    height:100%;
+    height: 100%;
 }
 
-.delete-button{
-    
+.delete-button {
+
     margin-left: auto;
     margin-right: 30px;
     position: relative;
     cursor: pointer;
     transition-property: box-shadow, transform, border-color;
-    border:none;
+    border: none;
     height: 30px;
     width: 30px;
     border-radius: 50%;
 }
-.delete-button img{
+
+.delete-button img {
     width: 100%;
-    height:100%;
+    height: 100%;
 }
+
 .edit-button:hover {
     box-shadow: 0px 0px 10px hsl(0, 0%, 90%);
     transform: translate3d(-10px);
-  }
-  .delete-button:hover {
+}
+
+.delete-button:hover {
     box-shadow: 0px 0px 10px hsl(0, 0%, 100%);
     transform: translate3d(-5px);
-  }
+}
+
 .todo-text-container {
-    flex:1;
+    flex: 1;
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
@@ -263,12 +295,19 @@ body {
     justify-content: center;
 }
 
-  .dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-.dropdown:hover .dropbtn {box-shadow: 0px 0px 10px hsl(0, 0%, 100%);}
-.items-statuses span  {
+.dropdown:hover .dropbtn {
+    box-shadow: 0px 0px 10px hsl(0, 0%, 100%);
+}
+
+.items-statuses span {
     padding: 0 4px;
     cursor: pointer;
 }
@@ -278,11 +317,12 @@ body {
     text-align: end;
 }
 
-.items-statuses span:hover, .items-clear:hover {
+.items-statuses span:hover,
+.items-clear:hover {
     color: hsl(220, 98%, 61%);
 }
 
-.items-statuses .active  {
+.items-statuses .active {
     color: hsl(220, 98%, 61%);
 }
 
@@ -295,45 +335,50 @@ body {
 .dropbtn {
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 10px;
-    background-color:  hsl(285, 81%, 34%);
+    background-color: hsl(285, 81%, 34%);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
-  
-  .dropbtn:hover, .dropbtn:focus {
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
     box-shadow: 0px 0px 10px hsl(271, 96%, 9%);
     transform: translate3d(-5px);
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: hsl(285, 81%, 34%);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     bottom: calc(100% + 5px);
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: hsl(285, 93%, 16%);}
-  
- .show {display:block;}
+}
 
-  .timestamp-container {
+.dropdown-content a:hover {
+    background-color: hsl(285, 93%, 16%);
+}
+
+.show {
+    display: block;
+}
+
+.timestamp-container {
     margin-left: 16px;
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+<script type ="module">
+
+    import {app, auth} from'./firebase.js'
+    auth.signOut().then(() => {
+    console.log('user signed out');
+    window.location = 'app.html';
+})
+
+auth.onAuthStateChanged (user=>{
+    console.log(user);
+})
+
+</script>
+</head>
+</html>

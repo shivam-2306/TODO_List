@@ -1,86 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-HZaXT+Z1gLMTVpw0o8T0hnV7sOzvoPKGRJ7sW8Hm9jJpFpSvJYlB6m+4zQ4gGw4vACJfLW8mtZ9f9jK95cN84Q==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>To Do List App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-    <script src="./firebase.js"></script>
-    <script src="./script.js"></script>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <script type ="module" src="./firebase.js"></script>
 </head>
+
 <body>
-    <div class="background-image">
-        
+  <div class="login-container">
+    <div id="main">
+      <h1>Sign In</h1>
+      <input id="email" type="text" placeholder="Email"></input>
+      <input id="password" type="password" placeholder="Password"></input>
+      <button id="submit">Submit</button>
+      <p><span>or</span></p>
+      <button id="sign-up">Sign Up</button>
     </div>
-    <div class="container">
-        <div class="header">
-            <div class="title">
-                TODO
-            </div>
-            <a href="login.html" class = "login-but">login</a>
-        </div>
-        <div class="new-todo">
-            
-            <div class="new-todo-input">
-                <form onsubmit="addItem(event)">
-                    <input type = "checkbox" class = "check-important">
-                    <input id="todo-input" type="text" placeholder="Create a new todo..." required />
-                    <input id="due-date" type="date" placeholder="Due date" required />
-                    <button type="submit">Add</button>
-                </form>
-            </div>
-        </div>
-        <div class="todo-items-wrapper">
-            <div class="todo-items">
-                <div class="todo-item">
-                    <div class="check">
-                        <div class="check-mark checked">
-                            <img src="assets/icon-check.svg">
-                        </div>
-                    </div>
-                    <div class="todo-text checked">
-                        Complete the assessment
-                    </div>
-                    <button class="edit-button"><img src="./assets/icons-edit.svg" alt="edit""></button>
-                    <button class="delete-button"><img src="assets/icon-delete.svg" alt="Delete"></button>
-                </div>
-                
-            </div>
-            <div class="todo-items-info">
-                
-                <div class="items-statuses">
-                    <span class="active" onclick="getItems()">All</span>
-                    <span onclick="displayTasksByStatus('active')">Active</span>
-                    <span onclick="displayTasksByStatus('completed')">Completed</span>
 
-                </div>
-                <div class="dropdown">
-                    <button onclick="toggleDropdown()" class="dropbtn">Sort By</button>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="sortByImportance(); event.stopPropagation();">By Importance</a>
-                        <a href="#" onclick="sortByDueDate()">By Due Date</a>
-                     
-                    </div>
-                  </div>
-
-                  
-                <div class="items-clear">
-                    <span onclick="clearCompleted()">Clear Completed</span>
-                </div>
-            </div>
-        </div>
+    <div id="create-acct">
+      <h1>Create an Account</h1>
+      <input id="email-signup" type="text" placeholder="Email *"></input>
+      <input id="confirm-email-signup" type="email" placeholder="Confirm Email *"></input>
+      <input id="password-signup" type="password" placeholder="Password *"></input>
+      <input id="confirm-password-signup" type="password" placeholder="Confirm Password *"></input>
+      <button id="create-acct-btn">Create Account</button>
+      <button id="return-btn">Return to Login</button>
     </div>
-    
-
-    
+  </div>
 </body>
+<script type ="module" src="script2.js"></script>
 </html>
